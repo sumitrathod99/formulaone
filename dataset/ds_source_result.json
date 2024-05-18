@@ -1,0 +1,26 @@
+{
+	"name": "ds_source_result",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "http_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"base_url": {
+				"type": "string"
+			},
+			"relative_url": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

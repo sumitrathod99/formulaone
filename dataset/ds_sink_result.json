@@ -1,0 +1,20 @@
+{
+	"name": "ds_sink_result",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "gen2_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "results",
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

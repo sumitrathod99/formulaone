@@ -1,0 +1,109 @@
+{
+	"name": "ds_lookup_races",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "gen2_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "races",
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"MRData": {
+					"type": "object",
+					"properties": {
+						"xmlns": {
+							"type": "string"
+						},
+						"series": {
+							"type": "string"
+						},
+						"url": {
+							"type": "string"
+						},
+						"limit": {
+							"type": "string"
+						},
+						"offset": {
+							"type": "string"
+						},
+						"total": {
+							"type": "string"
+						},
+						"RaceTable": {
+							"type": "object",
+							"properties": {
+								"season": {
+									"type": "string"
+								},
+								"Races": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"season": {
+												"type": "string"
+											},
+											"round": {
+												"type": "string"
+											},
+											"url": {
+												"type": "string"
+											},
+											"raceName": {
+												"type": "string"
+											},
+											"Circuit": {
+												"type": "object",
+												"properties": {
+													"circuitId": {
+														"type": "string"
+													},
+													"url": {
+														"type": "string"
+													},
+													"circuitName": {
+														"type": "string"
+													},
+													"Location": {
+														"type": "object",
+														"properties": {
+															"lat": {
+																"type": "string"
+															},
+															"long": {
+																"type": "string"
+															},
+															"locality": {
+																"type": "string"
+															},
+															"country": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											},
+											"date": {
+												"type": "string"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
